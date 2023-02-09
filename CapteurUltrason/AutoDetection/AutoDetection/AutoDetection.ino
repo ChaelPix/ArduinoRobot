@@ -2,30 +2,38 @@
 
 MeMegaPiDCMotor moteurG(PORT1B);
 MeMegaPiDCMotor moteurD(PORT2B);
+MeUltrasonicSensor m_ultraSensor(PORT_5);
 
 //-------Variables
 int movementSpeed = 100; //Max 255
-static float triggerDist = 3; //cm
-
+static float triggerDist = 1; //cm
 static float moves = 3;
-bool isRunning = true;
 
-//-------Main Functions
+bool m_isRunning = true;
+
+//-------Main Function
+
 void setup() {
+
   Serial.begin(9600);
 
+  // while(m_isRunning)
+  // {
+    
+  // }
 
 
-  while(isRunning)
-  {
-   moteurG.run(movementSpeed);
-  moteurD.run(-movementSpeed);
-    if(m_ultraSensor.distanceCm() < 1)
-    {
-      isRunning = false;
-      Serial.println("Obstacle detecte");
-      StopMove();
-    }
-  }
 
+}
+
+void loop()
+{
+  if(!m_isRunning) return;
+  
+  MoveF();   
+  
+    if(hasDetectedObstacle())
+      {
+        ObstacleDetected();
+      }
 }
