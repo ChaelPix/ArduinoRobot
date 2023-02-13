@@ -19,7 +19,7 @@ int rotationSpeed = 1000;  //Temps de rotation, en ms. Plus la valeur est grande
 int direction = 3;         //3: Tourne vers la gauche, 4: vers la droite
 
 static float triggerDist = 2;  //La distance en cm entre le robot et l'obstacle.
-static float moves = 12;       //Nombre de fois que le robot va répéter ce code
+static float moves = 20;       //Nombre de fois que le robot va répéter ce code
 
 //-------Main Function
 void setup() {

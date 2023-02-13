@@ -5,7 +5,6 @@ Le robot tourne d'angle pr√©cis avec le gyroscope
 #include "MeMegaPi.h"  //Motors library
 
 //-------Components Variables
-MeGyro gyro;
 MeMegaPiDCMotor m_moteurG(PORT1B);
 MeMegaPiDCMotor m_moteurD(PORT2B);
 
@@ -15,8 +14,8 @@ int movementSpeed = 100;  //Vitesse, entre 0 et 255, si les moteurs sont invers√
 //-------Main Functions
 void setup()
 {
-  Serial.begin(115200);
-  gyro.begin();  
+  SetupGyro();
+  Serial.begin(115200); 
 }
 
 void loop()
@@ -30,5 +29,5 @@ void loop()
     AngleRotate_Add(-69);
     delay(1000);
     AngleRotate_Set(0);
-    exit(0);
+    exit(0); //Stop le code
 }
