@@ -35,6 +35,7 @@ Desc :
   A NE PAS UTILISER EXTERIEUREMENT
 */
 void RotatingToTarget(int direction, int angleTarget) {
+   
   do {
     MoveTo(direction);  //Continu de tourner
     gyro.update();      //reactualise le gyro
@@ -90,6 +91,7 @@ void AngleRotate_Set(int angleTarget) {
   gyro.update();
   int x = GetGyroZ() - angleTarget;
   if (x >= 180) x = (x - 180) * -1;
+  //if(x < 180) x = (x + 180) * 1;
   if (x < 0)  //sens horaire
     direction = 4;
 

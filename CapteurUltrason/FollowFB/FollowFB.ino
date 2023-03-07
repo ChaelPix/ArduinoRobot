@@ -14,8 +14,8 @@ MeUltrasonicSensor m_ultraSensor(PORT_5);
 //-------Variables
 int movementSpeed = 100;  //Vitesse, entre 0 et 255, si les moteurs sont inversés, mettre la valeur en négatif.
 
-static float dist = 3;     //La distance en cm entre le robot et l'obstacle.
-static float maxDist = 6;  //La distance max
+static float dist = 2;     //La distance en cm entre le robot et l'obstacle.
+static float maxDist = 4;  //La distance max
 
 bool hasSeenObj;
 //-------Main Functions
@@ -32,6 +32,7 @@ void loop() {
   }
 
 double distance = m_ultraSensor.distanceCm();
+Serial.println(distance);
 
   if (distance > dist + 1) {    
     MoveForward();
