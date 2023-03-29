@@ -6,6 +6,7 @@ Pixy2 pixy;
 
 MeMegaPiDCMotor moteurG(PORT1B);
 MeMegaPiDCMotor moteurD(PORT2B);
+MeMegaPiDCMotor moteurL(PORT3B);
 
 MeUltrasonicSensor m_ultraSensor(PORT_5);
 
